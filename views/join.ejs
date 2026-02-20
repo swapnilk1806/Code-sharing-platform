@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join / Create · CodeMeet</title>
+  <link rel="stylesheet" href="/stylesheets/join.css">
+  <script src="/javascripts/auth.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <span class="logo">CodeMeet</span>
+    <div style="display:flex; align-items:center; gap:1.5rem;">
+      <div class="user-badge">
+        <div class="avatar"><%= displayName.charAt(0).toUpperCase() %></div>
+        <span><strong><%= displayName %></strong> <span style="color:#aac7e0;">@<%= username %></span></span>
+      </div>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="panel">
+      <h2>🚀 Join or create</h2>
+      <p>Start a new session instantly – share the room ID with your team.</p>
+      <form action="/join" method="POST">
+        <div class="form-group">
+          <label>Room ID (optional)</label>
+          <input type="text" name="roomId" placeholder="e.g. a1b2c3 – leave empty to create new">
+        </div>
+        <button type="submit" class="btn-primary">▶ Continue</button>
+      </form>
+      <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #2a4a6a;">
+        <span style="color:#aac7e0;">✨ Your new room will be automatically generated.</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="history-title">
+        <span>📋 Meeting history</span>
+        <span style="font-size:0.9rem; background:#1a2c3c; padding:4px 14px; border-radius:30px;">last 10</span>
+      </div>
+      <div class="history-list">
+        <% if (history.length > 0) { %>
+          <% history.forEach(function(entry) { %>
+            <div style="background:rgba(48,76,110,0.3); padding:1rem; border-radius:16px; margin-bottom:0.75rem; display:flex; justify-content:space-between; align-items:center; backdrop-filter:blur(4px);">
+              <span style="color:#b3d9ff; font-weight:500;">🆔 <%= entry.roomId %></span>
+              <span style="color:#aac7e0; font-size:0.9rem;"><%= entry.date %></span>
+              <span style="background:#1f3a5a; padding:6px 16px; border-radius:40px; font-size:0.85rem; color:#e0f0ff;"><%= entry.duration %></span>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <div style="color:#aac7e0; text-align:center; padding:2rem;">✨ No meetings yet. Create one to get started!</div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

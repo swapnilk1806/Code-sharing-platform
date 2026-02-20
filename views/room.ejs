@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Room <%= roomId %> · CodeMeet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+  <link rel="stylesheet" href="/stylesheets/room.css">
+</head>
+<body>
+  <div class="dashboard">
+    <div class="editor-panel">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <select id="languageSelect" class="lang-select">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="cpp">C++</option>
+          <option value="java">Java</option>
+          <option value="text">Plain Text</option>
+        </select>
+      </div>
+      <div class="editor-container">
+        <textarea id="code-editor"></textarea>
+      </div>
+      <div class="run-area">
+        <button class="run-btn" id="runCode">▶ Run</button>
+        <button class="ai-btn" id="aiAnalyze">🤖 AI Analyze</button>
+        <div class="timer" id="timerDisplay">⏱️ 00:00</div>
+        <div class="output-frame">
+          <iframe id="preview" sandbox="allow-scripts allow-same-origin allow-forms" title="output"></iframe>
+          <div id="aiOutput" class="ai-output-box"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="right-panel">
+      <div class="room-header">
+        <span>🆔 You are in room: <strong><%= roomId %></strong> <a href="/join" class="leave-btn" id="leaveBtn">Leave</a></span>
+      </div>
+      
+      <div class="self-camera">
+        <video id="selfVideo" autoplay muted playsinline class="self-video"></video>
+        <div class="cam-controls">
+          <button id="micToggle" class="cam-btn">🎤 Mic on</button>
+          <button id="camToggle" class="cam-btn">📹 Cam on</button>
+          <button id="priorityBtn" class="cam-btn">⭐ Priority</button>
+        </div>
+        <div id="cameraError" class="error-message" style="display:none;"></div>
+      </div>
+      
+      <div class="remote-videos" id="remoteVideos"></div>
+      
+      <div class="chat-section">
+        <div class="section-title">💬 Chat</div>
+        <div id="chatMessages" class="messages"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="Message...">
+          <button id="sendChat">Send</button>
+        </div>
+      </div>
+      
+      <div class="files-section">
+        <div class="section-title">📁 Shared documents</div>
+        <div id="fileList" class="file-list"></div>
+        <input type="file" id="fileUpload" style="display:none;">
+        <button class="upload-btn" id="uploadTrigger">+ Upload file</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Pass server-side variables to client
+    window.roomData = {
+      roomId: '<%= roomId %>',
+      userName: '<%= userName %>'
+    };
+  </script>
+  <script src="/javascripts/room.js"></script>
+</body>
+</html>

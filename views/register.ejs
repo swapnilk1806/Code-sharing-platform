@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register · CodeMeet</title>
+  <link rel="stylesheet" href="/stylesheets/auth.css">
+  <script src="/javascripts/auth.js"></script>
+</head>
+<body>
+  <div class="glass-card">
+    <h1>CodeMeet</h1>
+    <div class="sub">create new account</div>
+    <% if (typeof error !== 'undefined') { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    <form method="POST" action="/register">
+      <input type="text" name="username" placeholder="Username" required autofocus>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="text" name="name" placeholder="Display name (optional)">
+      <button type="submit">📝 Register</button>
+    </form>
+    <div class="link">Already have an account? <a href="/login">Login</a></div>
+  </div>
+</body>
+</html>
