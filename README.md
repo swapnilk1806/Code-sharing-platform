@@ -136,16 +136,16 @@ The application will start on `http://localhost:4000`
 #### Application Screenshots
 
 **Register Page:**
-![Register Page](http://localhost:4000/images/1.png)
+![Register Page](https://github.com/swapnilk1806/Code-sharing-platform/tree/main/public/images/1.png)
 
 **Login Page:**
-![Login Page](http://localhost:4000/images/2.png)
+![Login Page](https://github.com/swapnilk1806/Code-sharing-platform/tree/main/public/images/2.png)
 
 **Dashboard:**
-![Dashboard](http://localhost:4000/images/3.png)
+![Dashboard](https://github.com/swapnilk1806/Code-sharing-platform/tree/main/public/images/3.png)
 
 **Final Page:**
-![Final Page](http://localhost:4000/images/4.png)
+![Final Page](https://github.com/swapnilk1806/Code-sharing-platform/tree/main/public/images/4.png)
 
 #### Image Directory Structure
 ```
