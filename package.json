@@ -1,35 +1,33 @@
 {
-  "name": "codemeet",
-  "version": "1.0.0",
-  "description": "Real-time collaborative coding platform",
-  "main": "app.js",
+  "name": "codeshare-platform",
+  "version": "4.0.0",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "socket.io": "^4.7.2",
-    "mongoose": "^7.5.0",
-    "@google/genai": "^0.1.3",
-    "ioredis": "^5.3.2",
-    "connect-redis": "^7.1.0",
-    "@socket.io/redis-adapter": "^8.2.1",
+    "@google/genai": "^1.41.0",
+    "@langchain/core": "^1.1.24",
+    "@langchain/google-genai": "^2.1.18",
+    "@socket.io/redis-adapter": "^8.3.0",
+    "axios": "^1.13.5",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "connect-redis": "^6.1.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.22.1",
+    "express-session": "^1.19.0",
+    "http": "^0.0.1-security",
+    "ioredis": "^5.9.3",
+    "jsonwebtoken": "^9.0.3",
     "kafkajs": "^2.2.4",
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  },
-  "keywords": [
-    "collaboration",
-    "coding",
-    "real-time",
-    "socket.io",
-    "webRTC"
-  ],
-  "author": "CodeMeet Team",
-  "license": "MIT"
+    "langchain": "^1.2.23",
+    "mongoose": "^7.8.9",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.11",
+    "redis": "^4.7.1",
+    "socket.io": "^4.8.3"
+  }
 }

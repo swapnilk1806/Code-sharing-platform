@@ -131,6 +131,50 @@ The application will start on `http://localhost:4000`
    - Share files
    - Use AI analysis for code feedback
 
+### Static Files & Photo Uploads
+
+#### Application Screenshots
+
+**Register Page:**
+![Register Page](http://localhost:4000/images/1.png)
+
+**Login Page:**
+![Login Page](http://localhost:4000/images/2.png)
+
+**Dashboard:**
+![Dashboard](http://localhost:4000/images/3.png)
+
+**Final Page:**
+![Final Page](http://localhost:4000/images/4.png)
+
+#### Image Directory Structure
+```
+public/
+└── images/
+    ├── 1.png    # Register page screenshot
+    ├── 2.png    # Login page screenshot
+    ├── 3.png    # Dashboard screenshot
+    └── 4.png    # Final page screenshot
+```
+
+#### Photo Upload URLs
+Photos uploaded to the platform are accessible via the following URL pattern:
+```
+http://localhost:4000/images/[filename]
+```
+
+**Example URLs:**
+- `http://localhost:4000/images/1.png` - Register Page
+- `http://localhost:4000/images/2.png` - Login Page
+- `http://localhost:4000/images/3.png` - Dashboard
+- `http://localhost:4000/images/4.png` - Final Page
+
+#### File Upload Features
+- Support for image file uploads (PNG, JPG, JPEG, GIF)
+- Automatic file storage in `/public/images/` directory
+- Public URL generation for uploaded images
+- File size and type validation
+
 ## API Endpoints
 
 ### Authentication
