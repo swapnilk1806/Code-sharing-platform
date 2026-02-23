@@ -2,6 +2,33 @@
 
 A modern web application for real-time collaborative coding with video chat, AI code analysis, and file sharing.
 
+
+### Static Files & Photo Uploads
+
+#### Application Screenshots
+
+## 🖼️ Screenshots
+### 🔹 Register Page
+![Register Page](public/images/1.png)
+
+---
+
+### 🔹 Login Page
+![Login Page](public/images/2.png)
+
+---
+
+### 🔹 Dashboard
+![Dashboard](public/images/3.png)
+
+---
+
+### 🔹 Final Page
+![Final Page](public/images/4.png)
+
+---
+
+
 ## Features
 
 - 🚀 Real-time collaborative code editing
@@ -131,28 +158,7 @@ The application will start on `http://localhost:4000`
    - Share files
    - Use AI analysis for code feedback
 
-### Static Files & Photo Uploads
-
-#### Application Screenshots
-
-## 🖼️ Screenshots
-### 🔹 Register Page
-![Register Page](public/images/1.png)
-
----
-
-### 🔹 Login Page
-![Login Page](public/images/2.png)
-
----
-
-### 🔹 Dashboard
-![Dashboard](public/images/3.png)
-
----
-
-### 🔹 Final Page
-![Final Page](public/images/4.png)
+# CodeMeet - Real-time Collaborative Coding Platform
 #### Image Directory Structure
 ```
 
@@ -263,3 +269,6 @@ PORT=3001
 ## License
 
 MIT License
+
+
+
